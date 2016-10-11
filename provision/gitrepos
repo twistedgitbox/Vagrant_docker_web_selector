@@ -1,0 +1,23 @@
+############################################################
+# Use this file to list the gitrepos you want have placed in the guest
+#
+# Place WEB or DOCKER after the URL in order to notify the program:
+# 1. WEB - Place the files at /vagrant/web so the NGINX can serve them
+# 2. DOCKER - Place the files at /vagrant/docker and run the docker-compose in the same directory. This will create, load and run the docker container you have indicated.
+#
+# Designating more than one WEB or DOCKER URL will result in the last selection of each category being chosen.
+#
+# The URL must include http:// using just www.websitename.com will be ingnored.
+# The URL must also end with .git. Using the URL without ending will be ignored.
+# The URL format should be https://gitsite.com/username/projectname.git
+#
+# Since this selects git repos, obviously the URL needs to be a real git repo. It will filter out text that is not a website and but imaginary git repos will probably cause a problem. Try to use real URLs?
+
+https://github.com/twistedgitbox/TestforChanges.git
+
+https://github.com/puppetlabs/exercise-webpage.git WEB
+
+https://github.com/twistedgitbox/simple_nginx.git DOCKER
+
+https://github.com/pixelsign/html5-device-mockups.git
+
