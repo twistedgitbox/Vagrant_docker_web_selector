@@ -23,7 +23,7 @@ if apt -q list installed git
     echo "Git already installed"
   else
     echo "Installing Git"
-    apt-get install git -y > /dev/null 2>&1
+    sudo apt-get install git -y > /dev/null 2>&1
   fi
 
 # I like to know when the startup script is finished. It makes debugging easier later if we need to make changes.
