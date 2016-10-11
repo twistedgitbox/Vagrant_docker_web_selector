@@ -31,7 +31,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network "forwarded_port", guest: 443, host: 8082
   config.vm.network "forwarded_port", guest: 8000, host:8000
   #network
-  config.vm.network "public_network", ip: "192.168.0.60"
+  config.vm.network "public_network"#, ip: "192.168.0.60"
 
   # Sync your project in the /vagrant directory inside the VM
   config.vm.synced_folder ".", "/vagrant"
