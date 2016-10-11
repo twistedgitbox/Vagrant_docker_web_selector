@@ -27,8 +27,6 @@
 
 # The extraction takes the first word as URL to break into sections and the second as the designator for special actionsa
 
-# At the very end of the file, the user can add new URLs by calling the git_grab function
-
 # Only one Docker or Web repo can be used at a time. If the user selects more than one, then the last repo selected in that category will be used.
 
 
@@ -82,7 +80,7 @@ git_grab(){
     #Case WEB - to /vagrant/web folder
     "WEB")
       echo "Set or replace contents of /vagrant/web folder with $fullurl"
-      sudo rm -r /vagrant/web
+      sudo rm -r /vagrant/web/
       DIR=/vagrant/web/
       check_replace_repo $DIR
 
@@ -95,7 +93,7 @@ git_grab(){
     "DOCKER")
       echo "Set or replace contents of /vagrant/docker folder with $fullurl"
       sudo rm -r /vagrant/docker/
-      DIR=/vagrant/docker
+      DIR=/vagrant/docker/
 
       # I kept the check here because I plan to make the collection of git repos for docker & web to be an option not automated later
       check_replace_repo $DIR
