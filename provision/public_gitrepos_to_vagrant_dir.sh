@@ -80,8 +80,9 @@ git_grab(){
     #Case WEB - to /vagrant/web folder
     "WEB")
       echo "Set or replace contents of /vagrant/web folder with $fullurl"
-      sudo rm -r /vagrant/web/
+      rm -rf /vagrant/web/
       DIR=/vagrant/web/
+      git clone $url $DIR
       check_replace_repo $DIR
 
       # To prevent errors when multiple repos are copied to the same folders, the www and dockerfiles are wiped on selection of a WEB or DELETE designator in the git_grab function
@@ -92,8 +93,9 @@ git_grab(){
     # Needs docker-compose to function
     "DOCKER")
       echo "Set or replace contents of /vagrant/docker folder with $fullurl"
-      sudo rm -r /vagrant/docker/
+      rm -rf /vagrant/docker/
       DIR=/vagrant/docker/
+      git clone $url $DIR
 
       # I kept the check here because I plan to make the collection of git repos for docker & web to be an option not automated later
       check_replace_repo $DIR
@@ -123,10 +125,10 @@ check_replace_repo(){
       pushd $DIR
       if needs_stash; then
         # "Do git stash"
-        git stash
+        #git stash
         # "Do git pull"
         git pull --quiet
-        git stash pop
+        #git stash pop
       else
         # "No stash needed, just git pull"
         git init
