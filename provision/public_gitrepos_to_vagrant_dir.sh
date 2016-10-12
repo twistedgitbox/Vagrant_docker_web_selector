@@ -124,11 +124,8 @@ check_replace_repo(){
       # "Directory exists so do git pull to get latest commits"
       pushd $DIR
       if needs_stash; then
-        # "Do git stash"
-        #git stash
-        # "Do git pull"
+        echo "Needs stash, if possible"
         git pull --quiet
-        #git stash pop
       else
         # "No stash needed, just git pull"
         git init
