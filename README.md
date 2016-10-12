@@ -16,7 +16,7 @@ the following folders:
 `/vagrant/docker` folder on the Vagrant guest. The docker-container is then
 started using the `docker-compose.yml` file in the folder.
 
-(*note: this does require a docker-compose folder to exist and to be in the root directory of the repository*)
+(*note: this does require a docker-compose folder to exist and to be in the root directory of the designated `DOCKER` repository*)
 
 This version uses `docker-compose.yml` in Version 2 format as well. This is because
 the Vagrantfile uses the `ubuntu/trusty64` image. It also installs the latest
